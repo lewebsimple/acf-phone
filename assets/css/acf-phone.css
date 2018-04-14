@@ -8,3 +8,8 @@
     background-image: url("../images/flags@2x.png");
   }
 }
+
+/* Country dropdown z-index */
+.intl-tel-input .country-list {
+  z-index: 2000;
+}
