@@ -36,9 +36,11 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 			$url     = $this->settings['url'];
 			$version = $this->settings['version'];
 			$options = array(
-				'utilsScriptUrl' => "{$url}assets/js/utils.js",
-				'errors'         => array(
-					0 => __( "Phone number valid", 'acf-phone' ),
+				'initialCountry'     => 'CA',
+				'preferredCountries' => array( 'CA', 'US' ),
+				'utilsScriptUrl'     => "{$url}assets/js/utils.js",
+				'errors'             => array(
+					0 => __( "Invalid phone number", 'acf-phone' ),
 					1 => __( "Invalid country code", 'acf-phone' ),
 					2 => __( "Phone number too short", 'acf-phone' ),
 					3 => __( "Phone number too long", 'acf-phone' ),
@@ -74,14 +76,19 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 				'national' => '',
 				'country'  => 'CA',
 				'e164'     => '',
+				'ext'      => '',
 			) );
 			?>
-            <input type="tel" name="<?= $name ?>[national]" value="<?= $value['national'] ?>"/>
-            <input type="hidden" name="<?= $name ?>[country]" value="<?= $value['country'] ?>" class="country"/>
-            <input type="hidden" name="<?= $name ?>[e164]" value="<?= $value['e164'] ?>" class="e164"/>
-            <noscript>
-                <small><?= __( "Please enable JavaScript to use this field.", 'acf-phone' ) ?></small>
-            </noscript>
+            <div class="acf-input-wrap acf-phone">
+                <input type="tel" name="<?= $name ?>[national]" value="<?= $value['national'] ?>"/>
+                <input type="hidden" name="<?= $name ?>[country]" value="<?= $value['country'] ?>" class="country"/>
+                <input type="hidden" name="<?= $name ?>[e164]" value="<?= $value['e164'] ?>" class="e164"/>
+                <input type="hidden" name="<?= $name ?>[ext]" value="<?= $value['ext'] ?>" class="ext"/>
+                <div class="acf-phone-error" style="display: none;"></div>
+                <noscript>
+                    <small><?= __( "Please enable JavaScript to use this field.", 'acf-phone' ) ?></small>
+                </noscript>
+            </div>
 			<?php
 		}
 
@@ -95,6 +102,13 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		 * @return $value (mixed) the formatted value
 		 */
 		function format_value( $value, $post_id, $field ) {
+			return $value;
+		}
+
+		function update_value( $value, $post_id, $field ) {
+			// Strip extension from national number
+			$value['national'] = preg_replace( '/(.*) ext.*/i', '${1}', $value['national'] );
+
 			return $value;
 		}
 
