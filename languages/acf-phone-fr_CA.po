@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACF Phone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 15:28+0000\n"
-"PO-Revision-Date: 2018-04-14 15:29+0000\n"
+"POT-Creation-Date: 2018-04-14 21:56+0000\n"
+"PO-Revision-Date: 2018-04-14 21:57+0000\n"
 "Last-Translator: lewebsimple <tech@lewebsimple.ca>\n"
 "Language-Team: Français du Canada\n"
 "Language: fr_CA\n"
@@ -13,35 +13,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: fields/class-acf-phone-v5.php:13
+#: fields/class-acf-phone-v5.php:262
 msgid "Phone"
 msgstr "Téléphone"
 
-#: fields/class-acf-phone-v5.php:41
-msgid "Phone number valid"
-msgstr "Numéro de téléphone valide"
+#: fields/class-acf-phone-v5.php:280
+msgid "Initial country"
+msgstr "Pays initial"
 
-#: fields/class-acf-phone-v5.php:42
+#: fields/class-acf-phone-v5.php:281
+msgid "Default country when initializing phone input."
+msgstr "Pays par défaut lorsque le champ de téléphone est initialisé."
+
+#: fields/class-acf-phone-v5.php:288
+msgid "Return format"
+msgstr "Format de retour"
+
+#: fields/class-acf-phone-v5.php:289
+msgid "Specify the return format used in the templates."
+msgstr "Spécifier le format utilisé dans les templates."
+
+#: fields/class-acf-phone-v5.php:293
+msgid "National format"
+msgstr "National"
+
+#: fields/class-acf-phone-v5.php:294
+msgid "International format (E.164)"
+msgstr "International (E.164)"
+
+#: fields/class-acf-phone-v5.php:295
+msgid "Click to Call"
+msgstr "Cliquer pour appeler"
+
+#: fields/class-acf-phone-v5.php:296
+msgid "Values (array)"
+msgstr "Valeurs (array)"
+
+#: fields/class-acf-phone-v5.php:311 fields/class-acf-phone-v5.php:380
+msgid "Invalid phone number"
+msgstr "Numéro de téléphone invalide"
+
+#: fields/class-acf-phone-v5.php:312
 msgid "Invalid country code"
 msgstr "Code de pays invalide"
 
-#: fields/class-acf-phone-v5.php:43
+#: fields/class-acf-phone-v5.php:313
 msgid "Phone number too short"
 msgstr "Numéro de téléphone trop court"
 
-#: fields/class-acf-phone-v5.php:44
+#: fields/class-acf-phone-v5.php:314
 msgid "Phone number too long"
 msgstr "Numéro de téléphone trop long"
 
-#: fields/class-acf-phone-v5.php:45
+#: fields/class-acf-phone-v5.php:315
 msgid "Missing region code"
 msgstr "Code régional manquant"
 
-#: fields/class-acf-phone-v5.php:46
+#: fields/class-acf-phone-v5.php:316
 msgid "Invalid phone number length"
 msgstr "Longueur invalide du numéro de téléphone"
 
-#: fields/class-acf-phone-v5.php:83
+#: fields/class-acf-phone-v5.php:359
 msgid "Please enable JavaScript to use this field."
 msgstr "Veuillez activer JavaScript pour utiliser ce champ."
 

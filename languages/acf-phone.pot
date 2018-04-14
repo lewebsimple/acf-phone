@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACF Phone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 15:28+0000\n"
+"POT-Creation-Date: 2018-04-14 21:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,35 +14,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: fields/class-acf-phone-v5.php:13
+#: fields/class-acf-phone-v5.php:262
 msgid "Phone"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:41
-msgid "Phone number valid"
+#: fields/class-acf-phone-v5.php:280
+msgid "Initial country"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:42
+#: fields/class-acf-phone-v5.php:281
+msgid "Default country when initializing phone input."
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:288
+msgid "Return format"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:289
+msgid "Specify the return format used in the templates."
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:293
+msgid "National format"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:294
+msgid "International format (E.164)"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:295
+msgid "Click to Call"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:296
+msgid "Values (array)"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:311 fields/class-acf-phone-v5.php:380
+msgid "Invalid phone number"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:312
 msgid "Invalid country code"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:43
+#: fields/class-acf-phone-v5.php:313
 msgid "Phone number too short"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:44
+#: fields/class-acf-phone-v5.php:314
 msgid "Phone number too long"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:45
+#: fields/class-acf-phone-v5.php:315
 msgid "Missing region code"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:46
+#: fields/class-acf-phone-v5.php:316
 msgid "Invalid phone number length"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:83
+#: fields/class-acf-phone-v5.php:359
 msgid "Please enable JavaScript to use this field."
 msgstr ""
 
