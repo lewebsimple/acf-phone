@@ -34,6 +34,35 @@ if ( ! class_exists( 'acf_phone_plugin' ) ) {
 			include_once( 'fields/class-acf-phone-v' . $version . '.php' );
 		}
 
+		/**
+		 * Helper for displaying acf-phone field value in different formats
+		 *
+		 * @param array $value the raw phone value
+		 * @param string $format the desired format
+		 *
+		 * @return mixed the formatted value
+		 */
+		static function format_value( $value, $format = 'national' ) {
+			if ( empty( $value['national'] || empty( $value['e164'] ) ) ) {
+				return '';
+			}
+			$national = $value['national'] . ( $value['ext'] ? ' ext. ' . $value['ext'] : '' );
+			switch ( $format ) {
+				case 'national':
+					return $national;
+
+				case 'e164':
+					return $value['e164'];
+
+				case 'clicktocall':
+					return '<a href="tel:' . $value['e164'] . '">' . $national . '</a>';
+
+				case 'array':
+				default:
+					return $value;
+			}
+		}
+
 	}
 
 	new acf_phone_plugin();

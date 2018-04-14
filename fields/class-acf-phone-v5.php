@@ -263,6 +263,7 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 			$this->category = 'basic';
 			$this->defaults = array(
 				'initial_country' => 'CA',
+				'return_format'   => 'national',
 			);
 			$this->settings = $settings;
 			parent::__construct();
@@ -281,6 +282,19 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 				'type'         => 'select',
 				'choices'      => $this->countries,
 				'name'         => 'initial_country',
+			) );
+			// Return_format
+			acf_render_field_setting( $field, array(
+				'label'        => __( "Return format", 'acf-phone' ),
+				'instructions' => __( "Specify the return format used in the templates.", 'acf-phone' ),
+				'type'         => 'select',
+				'name'         => 'return_format',
+				'choices'      => array(
+					'national'    => __( "National format", 'acf-phone' ),
+					'e164'        => __( "International format (E.164)", 'acf-phone' ),
+					'clicktocall' => __( "Click to Call", 'acf-phone' ),
+					'array'       => __( "Values (array)", 'acf-phone' ),
+				),
 			) );
 		}
 
@@ -391,7 +405,7 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		 * @return $value (mixed) the formatted value
 		 */
 		function format_value( $value, $post_id, $field ) {
-			return $value;
+			return acf_phone_plugin::format_value( $value, $field['return_format'] );
 		}
 
 	}
