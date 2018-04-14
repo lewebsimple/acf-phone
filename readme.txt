@@ -11,5 +11,5 @@ Phone number field for Advanced Custom Field v5.
 
 == Changelog ==
 
-= 0.1.0 =
-* Initial plugin structure.
+= 1.0.0 =
+* International phone field with validation
