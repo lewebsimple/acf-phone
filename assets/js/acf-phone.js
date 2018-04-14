@@ -72,22 +72,24 @@
 
   // Validation hooks
   acf.add_filter('validation_complete', function (json, $form) {
-    let $national = $form.find('input[type=tel]'),
-      $error = $form.find('.acf-phone-error');
+    $form.find('.acf-input-wrap.acf-phone').each(function () {
+      let $national = $(this).find('input[type=tel]'),
+        $error = $(this).find('.acf-phone-error');
 
-    if ($error.text() !== '') {
-      // Inject intl-tel-input validation errors in ACF json
-      const phoneError = {
-        input: $national.attr('name'),
-        message: $error.text(),
-      };
-      if (json.valid) {
-        json.errors = [phoneError];
-        json.valid = false;
-      } else {
-        json.errors.push(phoneError);
+      if ($error.text() !== '') {
+        // Inject intl-tel-input validation errors in ACF json
+        const phoneError = {
+          input: $national.attr('name'),
+          message: $error.text(),
+        };
+        if (json.valid) {
+          json.errors = [phoneError];
+          json.valid = false;
+        } else {
+          json.errors.push(phoneError);
+        }
       }
-    }
+    });
 
     return json;
   });
