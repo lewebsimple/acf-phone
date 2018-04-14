@@ -37,6 +37,9 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		function render_field( $field ) {
 			?>
             <input type="tel" name="<?= esc_attr( $field['name'] ) ?>" value="<?= esc_attr( $field['value'] ) ?>"/>
+            <noscript>
+                <small><?= __( "Please enable JavaScript to use this field.", 'acf-phone' ) ?></small>
+            </noscript>
 			<?php
 		}
 
