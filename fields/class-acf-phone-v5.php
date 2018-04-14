@@ -44,6 +44,31 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		}
 
 		/**
+		 * Enqueue input scripts and styles
+		 */
+		function input_admin_enqueue_scripts() {
+			$url     = $this->settings['url'];
+			$version = $this->settings['version'];
+
+			wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), '12.1.0' );
+			wp_register_script( 'acf-phone', "{$url}assets/js/acf-phone.js", array(
+				'acf-input',
+				'intl-tel-input'
+			), $version );
+			wp_enqueue_script( 'acf-phone' );
+			wp_localize_script( 'acf-phone', 'options', array(
+				'utilsScriptUrl' => "{$url}assets/js/utils.js"
+			) );
+
+			wp_register_style( 'intl-tel-input', "{$url}assets/css/intlTelInput.css", array(), '12.1.0' );
+			wp_register_style( 'acf-phone', "{$url}assets/css/acf-phone.css", array(
+				'acf-input',
+				'intl-tel-input'
+			), $version );
+			wp_enqueue_style( 'acf-phone' );
+		}
+
+		/**
 		 * Format phone value
 		 *
 		 * @param $value (mixed) the value which was loaded from the database
