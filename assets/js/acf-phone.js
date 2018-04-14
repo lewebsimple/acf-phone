@@ -13,6 +13,25 @@
     $national.intlTelInput({
       utilsScript: options.utilsScriptUrl,
     });
+
+    // Validate phone number
+    function validate () {
+      if ($national.val()) {
+        if ($national.intlTelInput('isValidNumber')) {
+          // Update field values with normalized phone number
+          $national.val($national.intlTelInput('getNumber', intlTelInputUtils.numberFormat.NATIONAL));
+          $country.val($national.intlTelInput('getSelectedCountryData').iso2.toUpperCase());
+          $e164.val($national.intlTelInput('getNumber', intlTelInputUtils.numberFormat.E164));
+        } else {
+          // TODO: Display validation error on the frontend
+          console.log(options.errors[$national.intlTelInput('getValidationError')]);
+        }
+      }
+    }
+
+    $national.on('blur', function () {
+      validate();
+    });
   }
 
   if (typeof acf.add_action !== 'undefined') {

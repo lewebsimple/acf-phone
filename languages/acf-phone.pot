@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACF Phone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 12:36+0000\n"
+"POT-Creation-Date: 2018-04-14 15:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,26 +14,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
+#: fields/class-acf-phone-v5.php:13
+msgid "Phone"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:41
+msgid "Phone number valid"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:42
+msgid "Invalid country code"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:43
+msgid "Phone number too short"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:44
+msgid "Phone number too long"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:45
+msgid "Missing region code"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:46
+msgid "Invalid phone number length"
+msgstr ""
+
+#: fields/class-acf-phone-v5.php:83
+msgid "Please enable JavaScript to use this field."
+msgstr ""
+
 #. Name of the plugin
 msgid "ACF Phone"
+msgstr ""
+
+#. Description of the plugin
+msgid "Phone number field for Advanced Custom Fields v5."
 msgstr ""
 
 #. URI of the plugin
 msgid "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
 msgstr ""
 
-#. Author URI of the plugin
-msgid "https://lewebsimple.ca"
-msgstr ""
-
 #. Author of the plugin
 msgid "Pascal Martineau <pascal@lewebsimple.ca>"
 msgstr ""
 
-#: fields/class-acf-phone-v5.php:13
-msgid "Phone"
-msgstr ""
-
-#. Description of the plugin
-msgid "Phone number field for Advanced Custom Fields v5."
+#. Author URI of the plugin
+msgid "https://lewebsimple.ca"
 msgstr ""

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACF Phone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 12:36+0000\n"
-"PO-Revision-Date: 2018-04-14 12:37+0000\n"
+"POT-Creation-Date: 2018-04-14 15:28+0000\n"
+"PO-Revision-Date: 2018-04-14 15:29+0000\n"
 "Last-Translator: lewebsimple <tech@lewebsimple.ca>\n"
 "Language-Team: Français du Canada\n"
 "Language: fr_CA\n"
@@ -13,26 +13,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
+#: fields/class-acf-phone-v5.php:13
+msgid "Phone"
+msgstr "Téléphone"
+
+#: fields/class-acf-phone-v5.php:41
+msgid "Phone number valid"
+msgstr "Numéro de téléphone valide"
+
+#: fields/class-acf-phone-v5.php:42
+msgid "Invalid country code"
+msgstr "Code de pays invalide"
+
+#: fields/class-acf-phone-v5.php:43
+msgid "Phone number too short"
+msgstr "Numéro de téléphone trop court"
+
+#: fields/class-acf-phone-v5.php:44
+msgid "Phone number too long"
+msgstr "Numéro de téléphone trop long"
+
+#: fields/class-acf-phone-v5.php:45
+msgid "Missing region code"
+msgstr "Code régional manquant"
+
+#: fields/class-acf-phone-v5.php:46
+msgid "Invalid phone number length"
+msgstr "Longueur invalide du numéro de téléphone"
+
+#: fields/class-acf-phone-v5.php:83
+msgid "Please enable JavaScript to use this field."
+msgstr "Veuillez activer JavaScript pour utiliser ce champ."
+
 #. Name of the plugin
 msgid "ACF Phone"
 msgstr "ACF Téléphone"
+
+#. Description of the plugin
+msgid "Phone number field for Advanced Custom Fields v5."
+msgstr "Champ de numéro de téléphone pour Advanced Custom Fields v5."
 
 #. URI of the plugin
 msgid "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
 msgstr "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
 
-#. Author URI of the plugin
-msgid "https://lewebsimple.ca"
-msgstr "https://lewebsimple.ca"
-
 #. Author of the plugin
 msgid "Pascal Martineau <pascal@lewebsimple.ca>"
 msgstr "Pascal Martineau <pascal@lewebsimple.ca>"
 
-#: fields/class-acf-phone-v5.php:13
-msgid "Phone"
-msgstr "Téléphone"
-
-#. Description of the plugin
-msgid "Phone number field for Advanced Custom Fields v5."
-msgstr "Champ de numéro de téléphone pour Advanced Custom Fields v5."
+#. Author URI of the plugin
+msgid "https://lewebsimple.ca"
+msgstr "https://lewebsimple.ca"

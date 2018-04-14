@@ -36,7 +36,15 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 			$url     = $this->settings['url'];
 			$version = $this->settings['version'];
 			$options = array(
-				'utilsScriptUrl'     => "{$url}assets/js/utils.js"
+				'utilsScriptUrl' => "{$url}assets/js/utils.js",
+				'errors'         => array(
+					0 => __( "Phone number valid", 'acf-phone' ),
+					1 => __( "Invalid country code", 'acf-phone' ),
+					2 => __( "Phone number too short", 'acf-phone' ),
+					3 => __( "Phone number too long", 'acf-phone' ),
+					4 => __( "Missing region code", 'acf-phone' ),
+					5 => __( "Invalid phone number length", 'acf-phone' ),
+				),
 			);
 
 			wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), '12.1.0' );
