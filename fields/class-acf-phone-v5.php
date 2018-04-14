@@ -348,22 +348,49 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		}
 
 		/**
-		 * Format phone value
+		 * Validate phone value
 		 *
-		 * @param $value (mixed) the value which was loaded from the database
-		 * @param $post_id (mixed) the $post_id from which the value was loaded
-		 * @param $field (array) the $field holding the options
+		 * @param $valid (boolean) validation status based on the value and the field's required setting
+		 * @param $value (mixed) the $_POST value
+		 * @param $field (array) the field array holding all the field options
+		 * @param $input (string) the corresponding input name for $_POST value
 		 *
-		 * @return $value (mixed) the formatted value
+		 * @return mixed
 		 */
-		function format_value( $value, $post_id, $field ) {
-			return $value;
+		function validate_value( $valid, $value, $field, $input ) {
+			if ( empty( $value['national'] ) ) {
+				return $field['required'] ? false : $valid;
+			}
+
+			return $valid;
 		}
 
+		/**
+		 * Update phone value
+		 *
+		 * @param $value (mixed) the value to be updated in the database
+		 * @param $post_id (mixed) the $post_id from which the value was loaded
+		 * @param $field (array) the field array holding all the field options         *
+		 *
+		 * @return mixed
+		 */
 		function update_value( $value, $post_id, $field ) {
 			// Strip extension from national number
 			$value['national'] = preg_replace( '/(.*) ext.*/i', '${1}', $value['national'] );
 
+			return $value;
+		}
+
+		/**
+		 * Format phone value
+		 *
+		 * @param $value (mixed) the value which was loaded from the database
+		 * @param $post_id (mixed) the $post_id from which the value was loaded
+		 * @param $field (array) the $field array holding the options
+		 *
+		 * @return $value (mixed) the formatted value
+		 */
+		function format_value( $value, $post_id, $field ) {
 			return $value;
 		}
 
