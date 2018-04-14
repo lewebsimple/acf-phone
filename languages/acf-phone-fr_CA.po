@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ACF Phone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-14 12:36+0000\n"
+"PO-Revision-Date: 2018-04-14 12:37+0000\n"
+"Last-Translator: lewebsimple <tech@lewebsimple.ca>\n"
+"Language-Team: Français du Canada\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#. Name of the plugin
+msgid "ACF Phone"
+msgstr "ACF Téléphone"
+
+#. URI of the plugin
+msgid "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
+msgstr "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
+
+#. Author URI of the plugin
+msgid "https://lewebsimple.ca"
+msgstr "https://lewebsimple.ca"
+
+#. Author of the plugin
+msgid "Pascal Martineau <pascal@lewebsimple.ca>"
+msgstr "Pascal Martineau <pascal@lewebsimple.ca>"
+
+#: fields/class-acf-phone-v5.php:13
+msgid "Phone"
+msgstr "Téléphone"
+
+#. Description of the plugin
+msgid "Phone number field for Advanced Custom Fields v5."
+msgstr "Champ de numéro de téléphone pour Advanced Custom Fields v5."
