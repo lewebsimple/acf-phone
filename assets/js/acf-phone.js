@@ -17,26 +17,23 @@
       $national.val($national.val() + ` ext. ${$ext.val()}`);
     }
 
-    // Initialize intl-tel-input
-    const intlTelInputArgs = {
+    // Initial options for intl-tel-input
+    const intlTelInputOptions = {
       customPlaceholder: function (placeholder, countryData) {
         return placeholder.replace(/[0-9]/g, '#');
       },
       initialCountry: $country.val() || options.initialCountry || 'CA',
       preferredCountries: options.preferredCountries || ['CA', 'US'],
-      utilsScript: options.utilsScriptUrl,
     };
-    $national.intlTelInput(intlTelInputArgs);
+    $national.intlTelInput(intlTelInputOptions);
 
     // Reset phone number input
     function reset () {
-      $country.val(intlTelInputArgs.initialCountry);
+      $country.val(intlTelInputOptions.initialCountry);
       $e164.val('');
       $ext.val('');
       $error.text('');
     }
-
-    $national.on('keyup change', reset);
 
     // Validate phone number from national input value
     function validate () {
@@ -64,6 +61,11 @@
 
     validate();
     $national.blur(validate);
+    $national.on('keydown', function (e) {
+      if (e.which === 13) {
+        validate();
+      }
+    });
   }
 
   // Initialization hooks

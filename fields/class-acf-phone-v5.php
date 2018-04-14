@@ -307,7 +307,6 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 			$options = array(
 				'initialCountry'     => $this->defaults['initial_country'],
 				'preferredCountries' => array( 'CA', 'US' ),
-				'utilsScriptUrl'     => "{$url}assets/js/utils.js",
 				'errors'             => array(
 					0 => __( "Invalid phone number", 'acf-phone' ),
 					1 => __( "Invalid country code", 'acf-phone' ),
@@ -318,10 +317,12 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 				),
 			);
 
+			wp_register_script( 'intl-tel-input-utils', "{$url}assets/js/utils.js", array(), '12.1.0' );
 			wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), '12.1.0' );
 			wp_register_script( 'acf-phone', "{$url}assets/js/acf-phone.js", array(
 				'acf-input',
-				'intl-tel-input'
+				'intl-tel-input-utils',
+				'intl-tel-input',
 			), $version );
 			wp_enqueue_script( 'acf-phone' );
 			wp_localize_script( 'acf-phone', 'options', $options );
@@ -353,7 +354,7 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
                 <input type="hidden" name="<?= $name ?>[country]" value="<?= $value['country'] ?>" class="country"/>
                 <input type="hidden" name="<?= $name ?>[e164]" value="<?= $value['e164'] ?>" class="e164"/>
                 <input type="hidden" name="<?= $name ?>[ext]" value="<?= $value['ext'] ?>" class="ext"/>
-                <div class="acf-phone-error" style="display: none;"></div>
+                <div class="acf-phone-error"></div>
                 <noscript>
                     <small><?= __( "Please enable JavaScript to use this field.", 'acf-phone' ) ?></small>
                 </noscript>
@@ -374,6 +375,9 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		function validate_value( $valid, $value, $field, $input ) {
 			if ( empty( $value['national'] ) ) {
 				return $field['required'] ? false : $valid;
+			}
+			if ( empty( $value['e164'] ) ) {
+				return __( "Invalid phone number", 'acf-phone' );
 			}
 
 			return $valid;
