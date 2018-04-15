@@ -96,5 +96,4 @@
     return json;
   });
 
-})
-(jQuery);
+})(jQuery);
