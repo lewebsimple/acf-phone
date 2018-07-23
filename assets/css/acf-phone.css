@@ -10,6 +10,9 @@
 }
 
 /* Country dropdown z-index */
+.acf-field-phone .acf-input-wrap {
+  overflow: visible;
+}
 .intl-tel-input .country-list {
   z-index: 2000;
 }

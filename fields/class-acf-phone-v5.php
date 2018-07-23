@@ -343,17 +343,17 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		function render_field( $field ) {
 			$name  = $field['name'];
 			$value = wp_parse_args( $field['value'], array(
-				'national' => '',
-				'country'  => $field['initial_country'],
-				'e164'     => '',
-				'ext'      => '',
+				'national'  => '',
+				'country'   => $field['initial_country'],
+				'e164'      => '',
+				'extension' => '',
 			) );
 			?>
             <div class="acf-input-wrap acf-phone">
                 <input type="tel" name="<?= $name ?>[national]" value="<?= $value['national'] ?>"/>
                 <input type="hidden" name="<?= $name ?>[country]" value="<?= $value['country'] ?>" class="country"/>
                 <input type="hidden" name="<?= $name ?>[e164]" value="<?= $value['e164'] ?>" class="e164"/>
-                <input type="hidden" name="<?= $name ?>[ext]" value="<?= $value['ext'] ?>" class="ext"/>
+                <input type="hidden" name="<?= $name ?>[extension]" value="<?= $value['extension'] ?>" class="extension"/>
                 <div class="acf-phone-error"></div>
                 <noscript>
                     <small><?= __( "Please enable JavaScript to use this field.", 'acf-phone' ) ?></small>

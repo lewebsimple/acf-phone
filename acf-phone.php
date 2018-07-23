@@ -46,7 +46,7 @@ if ( ! class_exists( 'acf_phone_plugin' ) ) {
 			if ( empty( $value['national'] || empty( $value['e164'] ) ) ) {
 				return '';
 			}
-			$national = $value['national'] . ( $value['ext'] ? ' ext. ' . $value['ext'] : '' );
+			$national = $value['national'] . ( $value['extension'] ? ' ext. ' . $value['extension'] : '' );
 			switch ( $format ) {
 				case 'national':
 					return $national;

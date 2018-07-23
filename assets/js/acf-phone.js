@@ -9,12 +9,12 @@
     let $national = $field.find('input[type=tel]'),
       $country = $field.find('input.country'),
       $e164 = $field.find('input.e164'),
-      $ext = $field.find('input.ext'),
+      $extension = $field.find('input.extension'),
       $error = $field.find('.acf-phone-error');
 
     // Dynamically add "ext. #" to national input value
-    if ($ext.val() !== '') {
-      $national.val($national.val() + ` ext. ${$ext.val()}`);
+    if ($extension.val() !== '' && !/ext/.test($national.val())) {
+      $national.val($national.val() + ` ext. ${$extension.val()}`);
     }
 
     // Initial options for intl-tel-input
@@ -31,7 +31,7 @@
     function reset () {
       $country.val(intlTelInputOptions.initialCountry);
       $e164.val('');
-      $ext.val('');
+      $extension.val('');
       $error.text('');
     }
 
@@ -45,14 +45,14 @@
             national: $national.intlTelInput('getNumber', intlTelInputUtils.numberFormat.NATIONAL),
             country: $national.intlTelInput('getSelectedCountryData').iso2.toUpperCase(),
             e164: $national.intlTelInput('getNumber', intlTelInputUtils.numberFormat.E164),
-            ext: $national.intlTelInput('getExtension'),
+            extension: $national.intlTelInput('getExtension'),
           };
 
           // Update field values with normalized phone number
           $national.val(value.national);
           $country.val(value.country);
           $e164.val(value.e164);
-          $ext.val(value.ext);
+          $extension.val(value.extension);
         } else {
           $error.text(options.errors[$national.intlTelInput('getValidationError')]);
         }
