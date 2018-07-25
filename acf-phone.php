@@ -1,10 +1,12 @@
 <?php
 /**
  * Plugin Name:     ACF Phone
- * Plugin URI:      https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone
+ * Plugin URI:      https://github.com/lewebsimple/acf-phone
  * Description:     Phone number field for Advanced Custom Fields v5.
  * Author:          Pascal Martineau <pascal@lewebsimple.ca>
  * Author URI:      https://lewebsimple.ca
+ * License:         GPLv2 or later
+ * License URI:     http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     acf-phone
  * Domain Path:     /languages
  * Version:         1.0.0
@@ -26,12 +28,12 @@ if ( ! class_exists( 'acf_phone_plugin' ) ) {
 				'url'     => plugin_dir_url( __FILE__ ),
 				'path'    => plugin_dir_path( __FILE__ )
 			);
-			add_action( 'acf/include_field_types', array( $this, 'include_field' ) );
+			add_action( 'acf/include_field_types', array( $this, 'include_field_types' ) );
 		}
 
-		function include_field( $version = 5 ) {
+		function include_field_types( $version ) {
 			load_plugin_textdomain( 'acf-phone', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-			include_once( 'fields/class-acf-phone-v' . $version . '.php' );
+			include_once( 'fields/class-acf-phone-v5.php' );
 		}
 
 		/**
