@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACF Phone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-14 21:56+0000\n"
-"PO-Revision-Date: 2018-04-14 21:57+0000\n"
+"POT-Creation-Date: 2018-07-25 19:13+0000\n"
+"PO-Revision-Date: 2018-07-25 19:13+0000\n"
 "Last-Translator: lewebsimple <tech@lewebsimple.ca>\n"
 "Language-Team: Français du Canada\n"
 "Language: fr_CA\n"
@@ -86,8 +86,8 @@ msgid "Phone number field for Advanced Custom Fields v5."
 msgstr "Champ de numéro de téléphone pour Advanced Custom Fields v5."
 
 #. URI of the plugin
-msgid "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
-msgstr "https://gitlab.ledevsimple.ca/wordpress/plugins/acf-phone"
+msgid "https://github.com/lewebsimple/acf-phone"
+msgstr "https://github.com/lewebsimple/acf-phone"
 
 #. Author of the plugin
 msgid "Pascal Martineau <pascal@lewebsimple.ca>"
