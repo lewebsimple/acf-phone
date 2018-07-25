@@ -395,6 +395,10 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 		function update_value( $value, $post_id, $field ) {
 			// Strip extension from national number
 			$value['national'] = preg_replace( '/(.*) ext.*/i', '${1}', $value['national'] );
+			// Remove parentheses for CA / US numbers
+            if (in_array($value['country'], array('CA', 'US'))) {
+                $value['national'] = preg_replace('/\(|\)/', '', $value['national']);
+            }
 
 			return $value;
 		}
