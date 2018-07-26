@@ -8,6 +8,8 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 
 	class acf_phone_field extends acf_field {
 
+		public $settings;
+
 		// Countries list
 		private $countries = array(
 			'AF' => 'Afghanistan',
