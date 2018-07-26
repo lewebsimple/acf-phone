@@ -22,8 +22,8 @@
       customPlaceholder: function (placeholder, countryData) {
         return placeholder.replace(/[0-9]/g, '#');
       },
-      initialCountry: $country.val() || options.initialCountry || 'CA',
-      preferredCountries: options.preferredCountries || ['CA', 'US'],
+      initialCountry: $country.val() || acfPhoneOptions.initialCountry || 'CA',
+      preferredCountries: acfPhoneOptions.preferredCountries || ['CA', 'US'],
     };
     $national.intlTelInput(intlTelInputOptions);
 
@@ -54,7 +54,7 @@
           $e164.val(value.e164);
           $extension.val(value.extension);
         } else {
-          $error.text(options.errors[$national.intlTelInput('getValidationError')]);
+          $error.text(acfPhoneOptions.errors[$national.intlTelInput('getValidationError')]);
         }
       }
     }

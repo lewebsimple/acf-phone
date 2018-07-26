@@ -327,7 +327,7 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
 				'intl-tel-input',
 			), $version );
 			wp_enqueue_script( 'acf-phone' );
-			wp_localize_script( 'acf-phone', 'options', $options );
+			wp_localize_script( 'acf-phone', 'acfPhoneOptions', $options );
 
 			wp_register_style( 'intl-tel-input', "{$url}assets/css/intlTelInput.css", array(), '12.1.0' );
 			wp_register_style( 'acf-phone', "{$url}assets/css/acf-phone.css", array(
