@@ -14,7 +14,7 @@
 
     // Dynamically add "ext. #" to national input value
     if ($extension.val() !== '' && !/ext/.test($national.val())) {
-      $national.val($national.val() + ` ext. ${$extension.val()}`);
+      $national.val($national.val() + ' ext.' + $extension.val());
     }
 
     // Initial options for intl-tel-input
