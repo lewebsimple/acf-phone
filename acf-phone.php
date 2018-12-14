@@ -65,6 +65,35 @@ if ( ! class_exists( 'acf_phone_plugin' ) ) {
 			}
 		}
 
+		/**
+		 * Helper for encoding acf-phone field value from string
+		 *
+		 * @param $value
+		 *
+		 * @return array|bool
+		 */
+		static function encode_value( $value ) {
+			if ( empty( $value ) ) {
+				return false;
+			}
+			$value = preg_replace( '/[^0-9]/', '', $value );
+			if ( strlen( $value ) !== 10 ) {
+				return false;
+			}
+			$number = array(
+				substr( $value, 0, 3 ),
+				substr( $value, 3, 3 ),
+				substr( $value, 6, 4 ),
+			);
+
+			return array(
+				'national'  => "({$number[0]}) {$number[1]}-{$number[2]}",
+				'country'   => 'CA',
+				'e164'      => "+1{$value}",
+				'extension' => '',
+			);
+		}
+
 	}
 
 	new acf_phone_plugin();
