@@ -357,9 +357,6 @@ if ( ! class_exists( 'acf_phone_field' ) ) {
                 <input type="hidden" name="<?= $name ?>[e164]" value="<?= $value['e164'] ?>" class="e164"/>
                 <input type="hidden" name="<?= $name ?>[extension]" value="<?= $value['extension'] ?>" class="extension"/>
                 <div class="acf-phone-error"></div>
-                <noscript>
-                    <small><?= __( "Please enable JavaScript to use this field.", 'acf-phone' ) ?></small>
-                </noscript>
             </div>
 			<?php
 		}
