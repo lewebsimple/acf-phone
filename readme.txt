@@ -11,6 +11,9 @@ Phone number field for Advanced Custom Field v5.
 
 == Changelog ==
 
+= 1.0.4 =
+* Fix PHP warning
+
 = 1.0.3 =
 * Remove noscript message
 

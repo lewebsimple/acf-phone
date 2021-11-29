@@ -9,7 +9,7 @@
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     acf-phone
  * Domain Path:     /languages
- * Version:         1.0.3
+ * Version:         1.0.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ if ( ! class_exists( 'acf_phone_plugin' ) ) {
 
 		function __construct() {
 			$this->settings = array(
-				'version' => '1.0.2',
+				'version' => '1.0.4',
 				'url'     => plugin_dir_url( __FILE__ ),
 				'path'    => plugin_dir_path( __FILE__ )
 			);
@@ -45,7 +45,7 @@ if ( ! class_exists( 'acf_phone_plugin' ) ) {
 		 * @return mixed the formatted value
 		 */
 		static function format_value( $value, $format = 'national' ) {
-			if ( empty( $value['national'] || empty( $value['e164'] ) ) ) {
+			if ( empty( $value['national'] ) || empty( $value['e164'] ) ) {
 				return '';
 			}
 			$national = $value['national'] . ( $value['extension'] ? ' ext. ' . $value['extension'] : '' );
