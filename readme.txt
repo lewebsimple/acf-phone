@@ -11,6 +11,9 @@ Phone number field for Advanced Custom Field v5.
 
 == Changelog ==
 
+= 2.0.0 =
+* Refactor using the official ACF example field type
+
 = 1.0.3 =
 * Remove noscript message
 

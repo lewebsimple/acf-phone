@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACF Phone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-25 19:13+0000\n"
+"POT-Creation-Date: 2024-01-27 17:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,86 +14,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: fields/class-acf-phone-v5.php:262
-msgid "Phone"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:280
-msgid "Initial country"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:281
-msgid "Default country when initializing phone input."
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:288
-msgid "Return format"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:289
-msgid "Specify the return format used in the templates."
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:293
-msgid "National format"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:294
-msgid "International format (E.164)"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:295
-msgid "Click to Call"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:296
-msgid "Values (array)"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:311 fields/class-acf-phone-v5.php:380
-msgid "Invalid phone number"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:312
-msgid "Invalid country code"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:313
-msgid "Phone number too short"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:314
-msgid "Phone number too long"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:315
-msgid "Missing region code"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:316
-msgid "Invalid phone number length"
-msgstr ""
-
-#: fields/class-acf-phone-v5.php:359
-msgid "Please enable JavaScript to use this field."
-msgstr ""
-
 #. Name of the plugin
 msgid "ACF Phone"
 msgstr ""
 
-#. Description of the plugin
-msgid "Phone number field for Advanced Custom Fields v5."
+#: class-lws-acf-field-phone.php:377
+msgid "Click to Call"
 msgstr ""
 
 #. URI of the plugin
 msgid "https://github.com/lewebsimple/acf-phone"
 msgstr ""
 
+#. Author URI of the plugin
+msgid "https://websimple.com"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:359
+msgid "Initial country"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:376
+msgid "International format (E.164)"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:329
+msgid "Invalid country code"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:328 class-lws-acf-field-phone.php:453
+msgid "Invalid phone number"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:333
+msgid "Invalid phone number length"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:332
+msgid "Missing region code"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:375
+msgid "National format"
+msgstr ""
+
 #. Author of the plugin
 msgid "Pascal Martineau <pascal@lewebsimple.ca>"
 msgstr ""
 
-#. Author URI of the plugin
-msgid "https://lewebsimple.ca"
+#: class-lws-acf-field-phone.php:283
+msgid "Phone"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:293
+msgid "Phone field for ACF"
+msgstr ""
+
+#. Description of the plugin
+msgid "Phone field for Advanced Custom Fields."
+msgstr ""
+
+#: class-lws-acf-field-phone.php:331
+msgid "Phone number too long"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:330
+msgid "Phone number too short"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:370
+msgid "Return format"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:360
+msgid "Specify the initial country selected by default"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:371
+msgid "Specify the return format used in the templates"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:450
+msgid "This field is required"
+msgstr ""
+
+#: class-lws-acf-field-phone.php:378
+msgid "Values (array)"
 msgstr ""
