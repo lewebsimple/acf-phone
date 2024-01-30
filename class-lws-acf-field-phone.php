@@ -336,7 +336,7 @@ class lws_acf_field_phone extends \acf_field {
 
 		$this->env = array(
 			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ),
-			'version' => '2.0.2',
+			'version' => '2.0.3',
 		);
 
 		parent::__construct();
@@ -446,10 +446,11 @@ class lws_acf_field_phone extends \acf_field {
 	 * @return mixed
 	 */
 	function validate_value( $valid, $value, $field, $input ) {
-		if ( $field['required'] && empty( $value['national'] ) ) {
-			$valid = __( 'This field is required', 'acf-phone' );
-		}
-		if ( empty( $value['e164'] ) ) {
+		if ( empty( $value['national'] ) ) {
+			if ( $field['required'] ) {
+				$valid = __( 'This field is required', 'acf-phone' );
+			}
+		} elseif ( empty( $value['e164'] ) ) {
 			return __( "Invalid phone number", 'acf-phone' );
 		}
 		return $valid;
