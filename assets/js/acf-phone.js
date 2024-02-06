@@ -26,6 +26,7 @@
       initialCountry,
       preferredCountries: ['ca', 'us'],
     })
+    iti.promise.then(validate);
 
     // Reset hidden fields
     function reset() {
@@ -51,7 +52,6 @@
     }
 
     // Perform validation initially, on blur and enter keyup
-    validate();
     fields.$national.on('blur', validate);
     fields.$national.on('keyup', ({ keyCode }) => {
       (keyCode === 13) && validate();
