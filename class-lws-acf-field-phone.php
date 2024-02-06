@@ -336,7 +336,7 @@ class lws_acf_field_phone extends \acf_field {
 
 		$this->env = array(
 			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ),
-			'version' => '2.0.3',
+			'version' => '2.0.4',
 		);
 
 		parent::__construct();
