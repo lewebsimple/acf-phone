@@ -2,14 +2,17 @@
 Contributors: lewebsimple
 Tags: acf, phone, field
 Requires at least: 4.4
-Tested up to: 4.9.7
+Tested up to: 6.9.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Phone number field for Advanced Custom Field v5.
+Phone number field for Advanced Custom Fields.
 
 == Changelog ==
+
+= 3.1.0 =
+* Support WPGraphQL ACF
 
 = 2.0.2 =
 * Fix PHP error
