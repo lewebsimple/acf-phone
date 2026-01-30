@@ -1,4 +1,24 @@
 {
-    "name": "lewebsimple/acf-phone",
-    "type": "wordpress-plugin"
+  "name": "lewebsimple/acf-phone",
+  "type": "wordpress-plugin",
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "platform": {
+      "php": "8.3.0"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "./scripts/post-create.sh"
+    ],
+    "lint": "vendor/bin/phpcs",
+    "lintfix": "vendor/bin/phpcbf"
+  },
+  "require-dev": {
+    "lewebsimple/wp-phpcs-ruleset": "*",
+    "squizlabs/php_codesniffer": "*",
+    "php-stubs/acf-pro-stubs": "*"
+  }
 }

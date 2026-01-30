@@ -4,7 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class lws_acf_field_phone extends \acf_field {
+/**
+ * ACF Phone ACF field class
+ */
+class AcfPhoneField extends \acf_field {
 	/**
 	 * Controls field type visibilty in REST requests.
 	 *
@@ -19,6 +22,9 @@ class lws_acf_field_phone extends \acf_field {
 	 */
 	private $env;
 
+	/**
+	 * @var array $countries List of countries for the country select.
+	 */
 	private $countries = array(
 		'AF' => 'Afghanistan',
 		'AX' => 'Aland Islands',
@@ -348,7 +354,7 @@ class lws_acf_field_phone extends \acf_field {
 	 * These settings appear on the ACF “Edit Field Group” admin page when
 	 * setting up the field.
 	 *
-	 * @param array $field
+	 * @param array $field The field settings and values.
 	 * @return void
 	 */
 	public function render_field_settings( $field ) {
@@ -423,8 +429,8 @@ class lws_acf_field_phone extends \acf_field {
 		wp_register_style( 'acf-phone', "{$url}assets/css/acf-phone.css", array( 'intl-tel-input' ), $version );
 		wp_enqueue_style( 'acf-phone' );
 
-		wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), $version );
-		wp_register_script( 'acf-phone', "{$url}assets/js/acf-phone.js", array( 'acf-input', 'intl-tel-input' ), $version );
+		wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), $version, array() );
+		wp_register_script( 'acf-phone', "{$url}assets/js/acf-phone.js", array( 'acf-input', 'intl-tel-input' ), $version, array() );
 		wp_enqueue_script( 'acf-phone' );
 		$intl_tel_input_options = apply_filters(
 			'acf-phone/intl-tel-input-options',
@@ -436,16 +442,16 @@ class lws_acf_field_phone extends \acf_field {
 	}
 
 	/**
-	 * Validate phone value
+	 * Validate phone value.
 	 *
-	 * @param $valid (boolean) validation status based on the value and the field's required setting
-	 * @param value (mixed) the                                                                     $_POST value
-	 * @param $field (array) the field array holding all the field options
-	 * @param input (string) the corresponding input name for                                       $_POST value
+	 * @param boolean $valid validation status based on the value and the field's required setting.
+	 * @param mixed   $value the $_POST value.
+	 * @param array   $field the field array holding all the field options.
+	 * @param string  $input the corresponding input name for $_POST value.
 	 *
 	 * @return mixed
 	 */
-	function validate_value( $valid, $value, $field, $input ) {
+	public function validate_value( $valid, $value, $field, $input ) {
 		if ( empty( $value['national'] ) ) {
 			if ( $field['required'] ) {
 				$valid = __( 'This field is required', 'acf-phone' );
@@ -457,15 +463,15 @@ class lws_acf_field_phone extends \acf_field {
 	}
 
 	/**
-	 * Update value to database
+	 * Update value to database.
 	 *
-	 * @param  $value (mixed) the value found in the database
-	 * @param  post_id (mixed) the                                         $post_id from which the value was loaded
-	 * @param  $field (array) the field array holding all the field options
+	 * @param mixed $value the value found in the database.
+	 * @param mixed $post_id the $post_id from which the value was loaded.
+	 * @param array $field the field array holding all the field options.
 	 *
-	 * @return $value
+	 * @return mixed the modified value
 	 */
-	function update_value( $value, $post_id, $field ) {
+	public function update_value( $value, $post_id, $field ) {
 		// Strip extension from national number
 		$value['national'] = preg_replace( '/(.*) ext.*/i', '${1}', $value['national'] ?? '' );
 		// Remove parentheses for CA / US numbers
@@ -476,15 +482,15 @@ class lws_acf_field_phone extends \acf_field {
 	}
 
 	/**
-	 * Format full name value according to field settings
+	 * Format full name value according to field settings.
 	 *
-	 * @param  $value (mixed) the value which was loaded from the database
-	 * @param  post_id (mixed) the                                         $post_id from which the value was loaded
-	 * @param  $field (array) the field array holding all the field options
+	 * @param mixed $value the value which was loaded from the database.
+	 * @param mixed $post_id the $post_id from which the value was loaded.
+	 * @param array $field the field array holding all the field options.
 	 *
-	 * @return $value (mixed) the formatted value
+	 * @return mixed the formatted value
 	 */
-	function format_value( $value, $post_id, $field ) {
-		return acf_phone_plugin::format_value( $value, $field['return_format'] ?? 'national' );
+	public function format_value( $value, $post_id, $field ) {
+		return AcfPhone::format_value( $value, $field['return_format'] ?? 'national' );
 	}
 }
