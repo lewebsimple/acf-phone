@@ -16,13 +16,6 @@ class AcfPhoneField extends \acf_field {
 	public $show_in_rest = true;
 
 	/**
-	 * Environment values relating to the theme or plugin.
-	 *
-	 * @var array $env Plugin or theme context such as 'url' and 'version'.
-	 */
-	private $env;
-
-	/**
 	 * @var array $countries List of countries for the country select.
 	 */
 	private $countries = array(
@@ -340,11 +333,6 @@ class AcfPhoneField extends \acf_field {
 			),
 		);
 
-		$this->env = array(
-			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ),
-			'version' => '2.0.4',
-		);
-
 		parent::__construct();
 	}
 
@@ -422,23 +410,26 @@ class AcfPhoneField extends \acf_field {
 	 * @return void
 	 */
 	public function input_admin_enqueue_scripts() {
-		$url     = trailingslashit( $this->env['url'] );
-		$version = $this->env['version'];
+		if ( ! acf_is_field_type( 'phone' ) ) {
+			return;
+		}
 
+		$url     = trailingslashit( ACF_PHONE_URL );
+		$version = ACF_PHONE_VERSION;
+
+		// Styles
 		wp_register_style( 'intl-tel-input', "{$url}assets/css/intlTelInput.min.css", array(), $version );
 		wp_register_style( 'acf-phone', "{$url}assets/css/acf-phone.css", array( 'intl-tel-input' ), $version );
 		wp_enqueue_style( 'acf-phone' );
 
-		wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), $version, array() );
-		wp_register_script( 'acf-phone', "{$url}assets/js/acf-phone.js", array( 'acf-input', 'intl-tel-input' ), $version, array() );
+		// Scripts
+		wp_register_script( 'intl-tel-input', "{$url}assets/js/intlTelInput.min.js", array( 'jquery' ), $version, true );
+		wp_register_script( 'acf-phone', "{$url}assets/js/acf-phone.js", array( 'acf-input', 'intl-tel-input' ), $version, true );
 		wp_enqueue_script( 'acf-phone' );
-		$intl_tel_input_options = apply_filters(
-			'acf-phone/intl-tel-input-options',
-			array(
-				'utilsScript' => "{$url}assets/js/utils.js",
-			)
-		);
-		wp_localize_script( 'acf-phone', 'intlTelInputOptions', $intl_tel_input_options );
+
+		// JS options
+		$options = apply_filters( 'acf-phone/intl-tel-input-options', array( 'utilsScript' => "{$url}assets/js/utils.js" ) );
+		wp_localize_script( 'acf-phone', 'intlTelInputOptions', $options );
 	}
 
 	/**

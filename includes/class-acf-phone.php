@@ -13,11 +13,12 @@ class AcfPhone {
 	 *
 	 * @return mixed the formatted value
 	 */
-	public static function format_value( $value, $format ) {
+	public static function format_value( array $value, string $format ) {
 		if ( ! is_array( $value ) || empty( $value['national'] ) || empty( $value['e164'] ) ) {
 			return '';
 		}
-		$national = $value['national'] . ( $value['extension'] ? ' ext. ' . $value['extension'] : '' );
+		$ext      = $value['extension'] ?? '';
+		$national = $value['national'] . ( $ext ? " ext. $ext" : '' );
 		switch ( $format ) {
 			case 'national':
 				return $national;
@@ -26,7 +27,7 @@ class AcfPhone {
 				return $value['e164'];
 
 			case 'clicktocall':
-				return '<a href="tel:' . $value['e164'] . '">' . $national . '</a>';
+				return sprintf( '<a href="tel:%s">%s</a>', esc_attr( $value['e164'] ), esc_html( $national ) );
 
 			case 'array':
 			default:
@@ -41,7 +42,7 @@ class AcfPhone {
 	 *
 	 * @return array|bool
 	 */
-	public static function encode_value( $value ) {
+	public static function encode_value( string $value ) {
 		if ( empty( $value ) ) {
 			return false;
 		}
