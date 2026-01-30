@@ -9,7 +9,7 @@
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     acf-phone
  * Domain Path:     /languages
- * Version:         3.0.0
+ * Version:         3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
