@@ -13,7 +13,7 @@ class AcfPhone {
 	 *
 	 * @return mixed the formatted value
 	 */
-	public static function format_value( array $value, string $format ) {
+	public static function format_value( $value, string $format ) {
 		if ( ! is_array( $value ) || empty( $value['national'] ) || empty( $value['e164'] ) ) {
 			return '';
 		}
