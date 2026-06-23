@@ -2,7 +2,7 @@
 Contributors: lewebsimple
 Tags: acf, phone, field
 Requires at least: 4.4
-Tested up to: 6.9.0
+Tested up to: 7.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -10,6 +10,12 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Phone number field for Advanced Custom Fields.
 
 == Changelog ==
+
+= 3.1.2 =
+* Fix flag overlapping the input with ACF Extended on WordPress 7.0
+
+= 3.1.1 =
+* Don't type format_value argument
 
 = 3.1.0 =
 * Support WPGraphQL ACF

@@ -6,6 +6,15 @@
   z-index: 2000;
 }
 
+/* Restore left padding so the flag doesn't overlap the number.
+   Since WordPress 7.0, ACF Extended's compat stylesheet sets
+   `body.acf-wp-7-0 .acf-field input[type=tel] { padding-left: 8px }`,
+   which out-specifies intl-tel-input's own 52px rule. */
+.acf-phone .iti--allow-dropdown input.iti__tel-input,
+.acf-phone .iti--separate-dial-code input.iti__tel-input {
+  padding-left: 52px !important;
+}
+
 /* Validation error */
 .acf-phone-error {
   color: red;
